@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Incognito Tab Mover",
+  "version": "1.0",
+  "description": "Move tabs from incognito to a regular window. Use Alt+M (Option+M on Mac) to trigger.",
+  "author": "Rohit Wadhwa",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "move-tab": {
+      "suggested_key": {
+        "default": "Alt+M"
+      },
+      "description": "Move current tab to a non-incognito window"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

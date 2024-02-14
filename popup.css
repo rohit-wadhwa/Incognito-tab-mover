@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 16px;
+    width: 300px;
+}
+
+#incognitoGuide, #shortcutGuide, #supportText {
+    margin-top: 20px;
+    font-size: 0.9em;
+    background-color: #f8f9fa;
+    border-left: 3px solid #007bff;
+    padding: 10px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.warning, .coffee-link {
+    color: #ff0000;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+}
+
+.coffee-link, .info-text {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
