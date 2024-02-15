@@ -1,4 +1,5 @@
 # Incognito Tab Mover
+![image](https://github.com/rohit-wadhwa/Incognito-tab-mover/assets/2290963/56aa2ff2-dd4d-45bc-b44d-72f776bc63c2)
 
 Incognito Tab Mover is a Chrome extension designed to bridge the gap between privacy and productivity. It allows users to seamlessly transfer tabs from an incognito window to the main browser window with a simple keystroke (ALT+M on Windows/Linux, Option+M on Mac), ensuring that URLs are moved without transferring any session history.
 
