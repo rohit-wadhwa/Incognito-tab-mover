@@ -9,6 +9,10 @@ Incognito Tab Mover is a Chrome extension designed to bridge the gap between pri
 - **Privacy First**: Transfers only the URL, not the session history, maintaining your privacy.
 - **User Convenience**: Eliminates the need to bookmark or manually copy URLs from incognito sessions.
 
+## Demo 
+
+[![Incognito Tab Mover](https://img.youtube.com/vi/u_raICT5OJI/0.jpg)](https://www.youtube.com/watch?v=u_raICT5OJI)
+
 ## Limitations
 
 - Currently, the extension does not support moving all tabs at once from incognito to the main browser. Each tab needs to be moved individually.
