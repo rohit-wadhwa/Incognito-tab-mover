@@ -19,14 +19,18 @@ Incognito Tab Mover is a Chrome extension designed to bridge the gap between pri
 - Each tab opened via the extension will open in a separate new window. Users may need to manually organize these tabs into their desired existing window.
 
 ## Installation
+[![Chrome Web Store installation link](image.png)](https://chromewebstore.google.com/detail/incognito-tab-mover/cmgfihmnalhhfdelihcckpmggokcihnh)
 
-This section will be updated with Chrome Web Store installation details once the extension is published.
+Click above image for Chrome Web Store installation link or direct install in Chrome.
 
-For now, you can load the extension locally:
-1. Clone or download this repository to your local machine.
-2. Open Chrome, and navigate to `chrome://extensions/`.
-3. Enable "Developer mode" at the top right.
-4. Click "Load unpacked" and select the extension directory.
+### Install it from source
+You can easily install this from source by:
+1. Download the zip: https://github.com/rohit-wadhwa/Incognito-tab-mover/archive/master.zip
+2. Open the zip file
+4. Open chrome://extensions in Chrome
+5. Click on "Load Unpacked"
+6. Navigate to the `src` folder in this project that you downloaded and select the folder
+7. That's it! It should be installed locally now. Note that you will still need to mark it as "allowed in incognito" for it to function.
 
 ## Support
 
