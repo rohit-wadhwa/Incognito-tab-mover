@@ -63,5 +63,6 @@ Distributed under the [BSD 3-Clause License](/LICENSE). See `LICENSE` for more i
 <a href="https://github.com/rohit-wadhwa" target="_blank"><img src="https://raw.githubusercontent.com/nakulbhati/nakulbhati/master/contain/git.png" alt="GitHub" width="30"></a>
 <a href="https://about.me/rohit.wadhwa" target="_blank"><img src="https://raw.githubusercontent.com/nakulbhati/nakulbhati/master/contain/www.png" alt="Website" width="30"></a>
 
+[![Github Hits](https://hits.sh/github.com/rohit-wadhwa/Incognito-tab-mover.svg)](https://github.com/rohit-wadhwa/Incognito-tab-mover/)
 
 Project Link: [https://github.com/rohit-wadhwa/incognito-tab-mover](https://github.com/rohit-wadhwa/incognito-tab-mover)
