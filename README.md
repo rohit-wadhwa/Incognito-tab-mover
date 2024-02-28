@@ -35,6 +35,7 @@ You can easily install this from source by:
 ## Support
 
 If you've found Incognito Tab Mover helpful or valuable, please consider [buying me a coffee](https://www.buymeacoffee.com/rohit.wadhwa) to support further development.
+<a href="https://www.buymeacoffee.com/rohit.wadhwa"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=rohit.wadhwa&button_colour=40DCA5&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## Contributing
 
