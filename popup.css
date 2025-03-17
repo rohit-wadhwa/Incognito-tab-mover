@@ -31,3 +31,40 @@ h3 {
     display: block;
     margin-top: 15px;
 }
+
+#actions {
+    margin: 15px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+.action-button:active {
+    background-color: #3d8b40;
+}
+
+.shortcut-info {
+    font-size: 12px;
+    color: #666;
+    margin-top: -10px;
+    font-style: italic;
+}
