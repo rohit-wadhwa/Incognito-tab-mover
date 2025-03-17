@@ -52,6 +52,23 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+## Working with Tab Groups and Multiple Tabs
+
+### Tab Groups
+- When using Chrome's native tab groups feature, Incognito Tab Mover will move the individual tabs within the group
+- The group structure itself (colors, names) is not preserved when moving tabs
+- Both expanded and collapsed tab groups are supported
+
+### Tab States
+- For moving a single tab (Alt+M): The tab must be active/in focus
+- For moving all tabs (Alt+Shift+M): Any incognito tab can be in focus
+- No drag and drop functionality is required - simply use the keyboard shortcuts or popup buttons
+
+### Troubleshooting
+- If multiple windows are created unexpectedly, please update to version 2.0 or later
+- Ensure you've enabled "Allow in Incognito" for the extension in chrome://extensions
+- For best results with tab groups, move all tabs at once using Alt+Shift+M
+  
 ## License
 
 Distributed under the [BSD 3-Clause License](/LICENSE). See `LICENSE` for more information.
