@@ -56,5 +56,11 @@ function moveAllIncognitoTabs() {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "moveAllIncognitoTabs") {
         moveAllIncognitoTabs();
+    } else if (request.action === "moveTab") {
+        chrome.tabs.get(request.tabId, (tab) => {
+            if (tab) {
+                moveTabToNonIncognito(tab);
+            }
+        });
     }
 });
