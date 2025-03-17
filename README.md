@@ -1,11 +1,13 @@
 # Incognito Tab Mover
 ![image](https://github.com/rohit-wadhwa/Incognito-tab-mover/assets/2290963/56aa2ff2-dd4d-45bc-b44d-72f776bc63c2)
 
-Incognito Tab Mover is a Chrome extension designed to bridge the gap between privacy and productivity. It allows users to seamlessly transfer tabs from an incognito window to the main browser window with a simple keystroke (ALT+M on Windows/Linux, Option+M on Mac), ensuring that URLs are moved without transferring any session history.
+Incognito Tab Mover is a Chrome extension designed to bridge the gap between privacy and productivity. It allows users to seamlessly transfer tabs from an incognito window to the main browser window with simple keystrokes or button clicks, ensuring that URLs are moved without transferring any session history.
 
 ## Features
 
-- **Easy Transfer**: Move tabs from incognito to a regular window using a keyboard shortcut.
+- **Individual Tab Transfer**: Move the current tab from incognito to a regular window using ALT+M (Option+M on Mac).
+- **Bulk Tab Transfer**: Move all incognito tabs at once using ALT+Shift+M (Option+Shift+M on Mac).
+- **User Interface**: Simple popup interface with buttons for moving either the current tab or all incognito tabs.
 - **Privacy First**: Transfers only the URL, not the session history, maintaining your privacy.
 - **User Convenience**: Eliminates the need to bookmark or manually copy URLs from incognito sessions.
 
@@ -15,8 +17,8 @@ Incognito Tab Mover is a Chrome extension designed to bridge the gap between pri
 
 ## Limitations
 
-- Currently, the extension does not support moving all tabs at once from incognito to the main browser. Each tab needs to be moved individually.
-- Each tab opened via the extension will open in a separate new window. Users may need to manually organize these tabs into their desired existing window.
+- Each tab opened via the extension will open in a new window. When moving all tabs at once, they will be grouped in the same window.
+- Users may need to manually organize these tabs into their desired existing window.
 
 ## Installation
 [![Chrome Web Store installation link](image.png)](https://chromewebstore.google.com/detail/incognito-tab-mover/cmgfihmnalhhfdelihcckpmggokcihnh)
