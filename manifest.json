@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Incognito Tab Mover",
-  "version": "2.0",
-  "description": "Move tabs from incognito to regular windows. Use Alt+M for single tab or Alt+Shift+M for all tabs (Option+M/Option+Shift+M on Mac).",
+  "version": "2.1",
+  "description": "Bidirectional tab mover: Normal ↔ Incognito. Use Alt+M for single tab or Alt+Shift+M for all tabs (Option+M/Option+Shift+M on Mac).",
   "author": "Rohit Wadhwa",
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
@@ -22,13 +22,13 @@
       "suggested_key": {
         "default": "Alt+M"
       },
-      "description": "Move current tab to a non-incognito window"
+      "description": "Toggle current tab between normal and incognito windows"
     },
     "move-all-tabs": {
       "suggested_key": {
         "default": "Alt+Shift+M"
       },
-      "description": "Move all incognito tabs to a non-incognito window"
+      "description": "Toggle all tabs between normal and incognito windows"
     }
   },
   "icons": {

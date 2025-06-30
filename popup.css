@@ -54,12 +54,19 @@ h3 {
     margin: 0 auto;
 }
 
-.action-button:hover {
+.action-button:hover:not(:disabled) {
     background-color: #45a049;
 }
 
-.action-button:active {
+.action-button:active:not(:disabled) {
     background-color: #3d8b40;
+}
+
+.action-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 .shortcut-info {
@@ -67,4 +74,19 @@ h3 {
     color: #666;
     margin-top: -10px;
     font-style: italic;
+}
+
+/* Status message styles */
+#statusMessage {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
