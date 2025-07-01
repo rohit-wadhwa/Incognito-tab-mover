@@ -1,4 +1,14 @@
 # Incognito Tab Mover
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/rohit-wadhwa/Incognito-tab-mover)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/cmgfihmnalhhfdelihcckpmggokcihnh?label=Chrome%20Web%20Store&logo=googlechrome)](https://chromewebstore.google.com/detail/incognito-tab-mover/cmgfihmnalhhfdelihcckpmggokcihnh)
+[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/cmgfihmnalhhfdelihcckpmggokcihnh?label=Users&color=success)](https://chromewebstore.google.com/detail/incognito-tab-mover/cmgfihmnalhhfdelihcckpmggokcihnh)
+[![GitHub Stars](https://img.shields.io/github/stars/rohit-wadhwa/Incognito-tab-mover?style=social)](https://github.com/rohit-wadhwa/Incognito-tab-mover/stargazers)
+[![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](LICENSE)
+[![JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![GitHub Issues](https://img.shields.io/github/issues/rohit-wadhwa/Incognito-tab-mover)](https://github.com/rohit-wadhwa/Incognito-tab-mover/issues)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/rohit-wadhwa/Incognito-tab-mover)](https://github.com/rohit-wadhwa/Incognito-tab-mover/commits/main)
+
 ![image](https://github.com/rohit-wadhwa/Incognito-tab-mover/assets/2290963/56aa2ff2-dd4d-45bc-b44d-72f776bc63c2)
 
 Incognito Tab Mover is a Chrome extension designed to bridge the gap between privacy and productivity. It allows users to seamlessly transfer tabs from an incognito window to the main browser window with simple keystrokes or button clicks, ensuring that URLs are moved without transferring any session history.
