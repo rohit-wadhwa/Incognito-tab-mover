@@ -1,0 +1,49 @@
+name: Deploy Chrome Extension to Store
+
+on:
+  push:
+    tags:
+      - 'v*'          # Publish when a version tag (e.g. v2.2.0) is pushed
+  workflow_dispatch:  # Or trigger manually from the Actions tab
+    inputs:
+      version:
+        description: 'Version to deploy (e.g. 2.2.0). Leave empty to deploy current manifest version as-is.'
+        required: false
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Bump version in manifest
+        if: inputs.version != ''
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          sed -i "s/\"version\": \".*\"/\"version\": \"${VERSION}\"/" manifest.json
+          echo "Updated manifest.json to version ${VERSION}"
+          grep '"version"' manifest.json
+
+      - name: Package Extension
+        run: |
+          zip -r extension.zip * \
+            -x "*.git*" \
+            -x "*.github*" \
+            -x "node_modules/*" \
+            -x "*.md" \
+            -x "*.iml" \
+            -x "image.png" \
+            -x "LICENSE"
+
+      - name: Upload & Publish to Chrome Web Store
+        uses: mobilefirstllc/cws-publish@latest
+        with:
+          action: 'publish'
+          client_id: ${{ secrets.CHROME_CLIENT_ID }}
+          client_secret: ${{ secrets.CHROME_EXTENSION_SECRET }}
+          refresh_token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+          extension_id: ${{ secrets.CHROME_APP_ID }}
+          zip_file: './extension.zip'
