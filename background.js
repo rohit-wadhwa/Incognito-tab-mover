@@ -53,86 +53,49 @@ function moveAllTabsBidirectional(callback) {
             if (callback) callback(false, chrome.runtime.lastError.message);
             return;
         }
-
-        if (tabs.length === 0) {
-            console.log('No tabs found');
+        if (!tabs || tabs.length === 0) {
             if (callback) callback(false, 'No tabs found');
             return;
         }
 
-        // Determine if we're in an incognito window based on the first tab
         const isIncognitoWindow = tabs[0].incognito;
-        const targetIncognito = !isIncognitoWindow; // Toggle the window type
-        const direction = isIncognitoWindow ? 'incognito → normal' : 'normal → incognito';
-        
-        console.log(`Moving all tabs ${direction}`, tabs.length, 'tabs');
+        const targetIncognito = !isIncognitoWindow;
+        const direction = isIncognitoWindow ? 'incognito \u2192 normal' : 'normal \u2192 incognito';
 
-        // Create a new window with the first tab
-        chrome.windows.create({
-            url: tabs[0].url,
-            incognito: targetIncognito
-        }, (newWindow) => {
-            if (chrome.runtime.lastError) {
-                console.error('Failed to create window:', chrome.runtime.lastError);
-                if (callback) callback(false, chrome.runtime.lastError.message);
+        // Only http(s)/file URLs can be recreated in another window type.
+        // chrome://, extension pages, view-source:, and discarded/blank tabs are skipped
+        // instead of aborting the whole batch (this was the "only one tab moved" bug).
+        const movable = tabs.filter(t => /^(https?|file):/i.test(t.url || ''));
+        const skipped = tabs.length - movable.length;
+
+        if (movable.length === 0) {
+            if (callback) callback(false, 'No movable tabs (system pages like chrome:// cannot be moved)');
+            return;
+        }
+
+        const urls = movable.map(t => t.url);
+        const movableIds = movable.map(t => t.id);
+        console.log(`Moving all tabs ${direction}: ${movable.length} movable, ${skipped} skipped`);
+
+        // Open ONE new window containing all movable URLs at once.
+        // Atomic: no per-tab completion counter to stall, no freshly-created-window race.
+        chrome.windows.create({url: urls, incognito: targetIncognito}, (newWindow) => {
+            if (chrome.runtime.lastError || !newWindow || !newWindow.id) {
+                const msg = (chrome.runtime.lastError && chrome.runtime.lastError.message) || 'Failed to create new window';
+                console.error('Failed to create window:', msg);
+                if (callback) callback(false, msg);
                 return;
             }
 
-            // Validate that newWindow was created successfully
-            if (!newWindow || !newWindow.id) {
-                console.error('Failed to create window: newWindow is null or invalid');
-                if (callback) callback(false, 'Failed to create new window');
-                return;
-            }
-
-            // Move remaining tabs to the new window
-            const tabIds = tabs.map(tab => tab.id);
-            
-            // Remove the first tab from the list since it's already in the new window
-            const remainingTabs = tabs.slice(1);
-            
-            // Create remaining tabs in the new window
-            let completed = 0;
-            const total = remainingTabs.length;
-            
-            if (total === 0) {
-                // Only one tab to move
-                chrome.tabs.remove(tabIds, () => {
-                    if (chrome.runtime.lastError) {
-                        console.error('Failed to remove tabs:', chrome.runtime.lastError);
-                        if (callback) callback(false, chrome.runtime.lastError.message);
-                        return;
-                    }
-                    if (callback) callback(true, `Moved ${tabs.length} tab(s) ${direction} successfully`);
-                });
-                return;
-            }
-
-            remainingTabs.forEach(tab => {
-                chrome.tabs.create({
-                    windowId: newWindow.id,
-                    url: tab.url,
-                    active: false
-                }, () => {
-                    if (chrome.runtime.lastError) {
-                        console.error('Failed to create tab:', chrome.runtime.lastError);
-                        if (callback) callback(false, chrome.runtime.lastError.message);
-                        return;
-                    }
-                    
-                    completed++;
-                    if (completed === total) {
-                        // All tabs created, now remove original tabs
-                        chrome.tabs.remove(tabIds, () => {
-                            if (chrome.runtime.lastError) {
-                                console.error('Failed to remove tabs:', chrome.runtime.lastError);
-                                if (callback) callback(false, chrome.runtime.lastError.message);
-                                return;
-                            }
-                            if (callback) callback(true, `Moved ${tabs.length} tab(s) ${direction} successfully`);
-                        });
-                    }
-                });
+            // Remove only the originals we successfully recreated.
+            chrome.tabs.remove(movableIds, () => {
+                if (chrome.runtime.lastError) {
+                    console.error('Failed to remove original tabs:', chrome.runtime.lastError);
+                    if (callback) callback(false, chrome.runtime.lastError.message);
+                    return;
+                }
+                const note = skipped > 0 ? ` (${skipped} system tab(s) left in place)` : '';
+                if (callback) callback(true, `Moved ${movable.length} tab(s) ${direction} successfully${note}`);
             });
         });
     });

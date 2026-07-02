@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.2.0] - Move-all reliability fix
+
+### 🐛 Fixed
+- **"Move all tabs" moved only one tab.** The bulk move recreated tabs one-by-one and stalled if any single tab could not be recreated (chrome:// pages, extension pages, or memory-saver-discarded tabs with an empty URL), leaving the originals in place and only the first tab moved. Bulk move now opens one new window with all movable URLs at once and skips system pages gracefully (they stay put, with a note).
+
 ## [v2.1.0] - Bug Fixes Release
 
 ### 🐛 Critical Bugs Fixed
