@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Incognito Tab Mover",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Bidirectional tab mover: Normal ↔ Incognito. Use Alt+M for single tab or Alt+Shift+M for all tabs (Option+M/Option+Shift+M on Mac).",
   "author": "Rohit Wadhwa",
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "contextMenus"
   ],
   "host_permissions": [],
   "background": {

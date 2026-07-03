@@ -126,3 +126,28 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return true; // Keep message channel open for async response
     }
 });
+
+
+// --- Right-click context menu (feature request: rpr, Oct 2025) ---
+// Note: Chrome does not let extensions add items to the TAB-STRIP right-click menu,
+// so these appear on the PAGE right-click menu instead.
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.contextMenus.create({
+        id: "move-tab",
+        title: "Move this tab (Normal \u2194 Incognito)",
+        contexts: ["page"]
+    });
+    chrome.contextMenus.create({
+        id: "move-all-tabs",
+        title: "Move all tabs (Normal \u2194 Incognito)",
+        contexts: ["page"]
+    });
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "move-tab" && tab) {
+        moveTabBidirectional(tab);
+    } else if (info.menuItemId === "move-all-tabs") {
+        moveAllTabsBidirectional();
+    }
+});

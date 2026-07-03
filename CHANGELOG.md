@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.3.0] - Right-click menu
+
+### ✨ Added
+- **Right-click menu option** (requested by user "rpr"): right-click a page and choose **"Move this tab"** or **"Move all tabs"** (Normal ↔ Incognito) — no keyboard shortcut needed. (Chrome doesn't allow adding items to the tab-strip menu, so it lives on the page context menu.)
+
+
 ## [v2.2.1] - Setup guidance
 
 ### 📝 Docs / UX

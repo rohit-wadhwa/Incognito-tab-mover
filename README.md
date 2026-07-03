@@ -33,6 +33,7 @@ If the **"Allow in incognito" toggle is missing**, or you see **"Failed to creat
 ## Features
 
 - **Individual Tab Transfer**: Move the current tab from incognito to a regular window using ALT+M (Option+M on Mac).
+- **Right-click Menu**: Right-click a page and choose "Move this tab" or "Move all tabs" (Normal ↔ Incognito) — no shortcut needed.
 - **Bulk Tab Transfer**: Move all incognito tabs at once using ALT+Shift+M (Option+Shift+M on Mac).
 - **User Interface**: Simple popup interface with buttons for moving either the current tab or all incognito tabs.
 - **Privacy First**: Transfers only the URL, not the session history, maintaining your privacy.
