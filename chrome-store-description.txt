@@ -1,0 +1,23 @@
+Incognito Tab Mover — Bidirectional tab mover: Normal ↔ Incognito.
+
+⚠️ REQUIRED SETUP — PLEASE READ FIRST
+This extension moves tabs into Incognito windows, so Chrome requires you to allow it there:
+1) Open chrome://extensions
+2) Find "Incognito Tab Mover" → click Details
+3) Turn ON "Allow in incognito"
+Without this, nothing will happen when you use the extension.
+
+NOT WORKING / NO "ALLOW IN INCOGNITO" OPTION?
+If that toggle is missing, or you see "Failed to create window: Incognito mode is disabled", then Incognito mode is disabled in your browser (the IncognitoModeAvailability policy — common on managed/work profiles). The extension cannot work until Incognito is enabled. On a work device, ask your IT admin, or use a personal Chrome profile. You can verify at chrome://policy or by pressing Ctrl/Cmd+Shift+N.
+
+WHAT IT DOES
+Move a single tab between Normal and Incognito with Alt+M (Option+M on Mac), or move all tabs at once with Alt+Shift+M (Option+Shift+M on Mac). URLs are moved without transferring session history, preserving your privacy.
+
+• Individual tab transfer — Alt+M / Option+M
+• Bulk transfer — Alt+Shift+M / Option+Shift+M
+• Bidirectional: Normal → Incognito and Incognito → Normal
+• Privacy first: only the URL is moved, not session history
+• Simple popup with buttons for both actions
+
+PRIVACY
+No data collection. Everything happens locally in your browser.

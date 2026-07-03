@@ -13,6 +13,23 @@
 
 Incognito Tab Mover is a Chrome extension designed to bridge the gap between privacy and productivity. It allows users to seamlessly transfer tabs from an incognito window to the main browser window with simple keystrokes or button clicks, ensuring that URLs are moved without transferring any session history.
 
+## ⚠️ Required Setup (please read)
+
+This extension moves tabs into **Incognito** windows, so Chrome requires you to explicitly allow it there:
+
+1. Go to `chrome://extensions`
+2. Find **Incognito Tab Mover** and click **Details**
+3. Turn on **"Allow in incognito"**
+
+**Without this, the extension cannot open incognito windows and nothing will happen when you use it.**
+
+### Not working? / No "Allow in incognito" toggle?
+
+If the **"Allow in incognito" toggle is missing**, or you see **"Failed to create window: Incognito mode is disabled"**, then **Incognito mode is turned off** in your browser (the `IncognitoModeAvailability` policy, common on managed/work profiles). The extension cannot function until Incognito is enabled:
+
+- **Managed/work device:** ask your IT admin to allow Incognito, or use a **personal Chrome profile**.
+- **Check it yourself:** open `chrome://policy` (look for `IncognitoModeAvailability` = `1` means disabled), or press `Ctrl+Shift+N` / `Cmd+Shift+N` — if no incognito window opens, it's disabled.
+
 ## Features
 
 - **Individual Tab Transfer**: Move the current tab from incognito to a regular window using ALT+M (Option+M on Mac).

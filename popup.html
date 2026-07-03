@@ -17,10 +17,23 @@
 <div id="incognitoGuide">
     <strong>Bidirectional Tab Movement:</strong>
     <ul>
-        <li>From <b>Normal</b> window → moves to <b>Incognito</b></li>
-        <li>From <b>Incognito</b> window → moves to <b>Normal</b></li>
+        <li>From <b>Normal</b> window &rarr; moves to <b>Incognito</b></li>
+        <li>From <b>Incognito</b> window &rarr; moves to <b>Normal</b></li>
     </ul>
-    <p><strong>Note:</strong> Enable "Allow in incognito" in <code>chrome://extensions/</code> for full functionality.</p>
+    <div style="margin-top:10px;padding:8px 10px;border-left:4px solid #f5a623;background:#fff8ec;border-radius:4px;">
+        <strong>&#9888; Required setup:</strong> You must turn on
+        <b>&ldquo;Allow in incognito&rdquo;</b> for this extension at
+        <code>chrome://extensions</code> &rarr; Incognito Tab Mover &rarr; <b>Details</b>.
+        Without it, the extension cannot open incognito windows and nothing will happen.
+    </div>
+    <div style="margin-top:8px;padding:8px 10px;border-left:4px solid #d0021b;background:#fdecea;border-radius:4px;">
+        <strong>Don&rsquo;t see the &ldquo;Allow in incognito&rdquo; toggle?</strong>
+        Your browser or organization has <b>disabled Incognito mode</b>
+        (<code>IncognitoModeAvailability</code> policy). The extension can&rsquo;t work until
+        Incognito is enabled &mdash; on a managed/work device ask your IT admin, or use a
+        personal Chrome profile. Check via <code>chrome://policy</code> or press
+        <code>Ctrl/Cmd+Shift+N</code>.
+    </div>
 </div>
 <div id="supportText">
     <p>If you've found my work helpful or valuable, please consider supporting me by buying me a coffee.</p>

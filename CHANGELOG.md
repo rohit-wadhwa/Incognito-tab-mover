@@ -1,5 +1,12 @@
 # Changelog
 
+## [v2.2.1] - Setup guidance
+
+### 📝 Docs / UX
+- Popup now clearly states that **"Allow in incognito" must be enabled** (chrome://extensions -> Details) or the extension cannot open incognito windows.
+- Added guidance for when the "Allow in incognito" toggle is missing because **Incognito is disabled by browser/organization policy** (IncognitoModeAvailability) - the extension cannot function until Incognito is enabled.
+- README expanded with a Required Setup section and Troubleshooting for the policy case.
+
 ## [v2.2.0] - Move-all reliability fix
 
 ### 🐛 Fixed
