@@ -11,10 +11,11 @@ NOT WORKING / NO "ALLOW IN INCOGNITO" OPTION?
 If that toggle is missing, or you see "Failed to create window: Incognito mode is disabled", then Incognito mode is disabled in your browser (the IncognitoModeAvailability policy — common on managed/work profiles). The extension cannot work until Incognito is enabled. On a work device, ask your IT admin, or use a personal Chrome profile. You can verify at chrome://policy or by pressing Ctrl/Cmd+Shift+N.
 
 WHAT IT DOES
-Move a single tab between Normal and Incognito with Alt+M (Option+M on Mac), or move all tabs at once with Alt+Shift+M (Option+Shift+M on Mac). URLs are moved without transferring session history, preserving your privacy.
+Move a single tab between Normal and Incognito with Alt+M (Option+M on Mac), or move all tabs at once with Alt+Shift+M (Option+Shift+M on Mac). Prefer the mouse? Right-click any page and choose "Move this tab" or "Move all tabs". URLs are moved without transferring session history, preserving your privacy.
 
 • Individual tab transfer — Alt+M / Option+M
 • Bulk transfer — Alt+Shift+M / Option+Shift+M
+• Right-click menu — move a tab (or all tabs) from the page right-click menu, no shortcut needed
 • Bidirectional: Normal → Incognito and Incognito → Normal
 • Privacy first: only the URL is moved, not session history
 • Simple popup with buttons for both actions
